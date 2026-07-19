@@ -1,33 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Hero from "./components/Hero";
+import Dashboard from "./components/Dashboard";
+
 function App() {
   return (
-    <div
-      style={{
-        fontFamily: "Arial, sans-serif",
-        textAlign: "center",
-        padding: "60px",
-      }}
-    >
-      <h1>📚 AI Homework Helper</h1>
+    <BrowserRouter>
 
-      <h2>Learn Smarter, Not Harder</h2>
+      <Routes>
 
-      <p>
-        Upload homework questions and receive clear, step-by-step explanations
-        powered by AI.
-      </p>
+        <Route path="/" element={<Hero />} />
 
-      <button
-        style={{
-          padding: "15px 30px",
-          fontSize: "18px",
-          borderRadius: "10px",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
-        🚀 Get Started
-      </button>
-    </div>
+        <Route path="/dashboard" element={<Dashboard />} />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
